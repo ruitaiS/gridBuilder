@@ -2,44 +2,20 @@
 
 <html>
 <head>
-    <title>Rock Paper Scissors</title>
+    <title>World Grid Builder</title>
     <link rel="stylesheet" href="./css/main.css">
-    <link href='https://fonts.googleapis.com/css?family=Pangolin' rel='stylesheet'>
+    
 </head>
 <body>
 
-<div id="board">
-    <div class="choicebar">
-        <button type="gameButton" onclick="hey()"><img id="myRock" src="./img/rock.png"></button>
-        <button type="gameButton" onclick="hey()"><img id="myPaper" src="./img/paper.png"></button>
-        <button type="gameButton" onclick="hey()"><img id="myScissors" src="./img/scissors.png"></button>
-    </div>
-    
-    <div id="middle">
-    <p id="message" style="text-align: center;"></p>
-    
-    <div id="scorebar">
-
-            <p id="yourscore" style="padding-left: 20px;"></p>
-
-            <p id="myscore" style="padding-right: 20px;"></p>
+    <div id="grid">
+        <div id="row1" class="row">
+            <button onclick="makeRows(5)" >yo</button>
+        </div>
 
     </div>
 
-    </div>
 
-    <div class="choicebar">
-        <button type="button" onclick="press(1)"><img id="yourRock" src="./img/rock.png"></button>
-        <button type="button" onclick="press(2)"><img id="yourPaper" src="./img/paper.png"></button>
-        <button type="button" onclick="press(3)"><img id="yourScissors" src="./img/scissors.png"></button>
-    </div>
-
-    <div id="infolinks">
-    <button id="aboutBtn" type="button" onclick="about()" style="height:30px; width: 125px;">About</button>
-    <button type="button" onclick="reset()" style="height:30px; width: 125px;">Reset</button>
-    </div>
-
-</div>
 
 
 

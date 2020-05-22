@@ -7,8 +7,6 @@ button:focus {
 
 body{
     margin: 0;
-    font-family: "Pangolin";
-    font-size: 35px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -20,20 +18,16 @@ button{
     font-size: 25px;
 
     display: inline-block;
-    height:125px;
-    width: 125px;
+    height:50px;
+    width: 50px;
     vertical-align: middle;
     text-align: center;
     background-color: #e2bfab;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
   
 }
 
-button img{
-    transform: translate(0, 5%);
-}
-
-.choicebar{
+.row{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -43,48 +37,6 @@ button img{
     height: 200px;
 
     background-color: transparent;
-}
-
-
-#middle{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 500px;
-    background-color: #70dde2;
-}
-
-#scorebar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 100px;
-    background-color: transparent;
-}
-
-#board{
-
-    /*nudge down the page*/
-    transform: translate(0, 10%);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 750px;
-    width: 750px;
-    border-radius: 25px;
-
-    background-color: #e498b4;
-}
-
-#infolinks{
-    display: flex;
-    justify-content: flex-end;
-    width: 500px;
-    height: 40px;
-    align-items: center;
 }
 
 
