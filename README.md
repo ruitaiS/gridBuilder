@@ -3,8 +3,11 @@ This is a grid-builder GUI to be used in conjunction with the AI simulator progr
 It generates the world config file that the AI simulator uses as input to set the initial state of the grid world.
 
 I decided to write it in HTML and JS, rather than Java (which the simulator is written in) becuase 
+
 (a) I'm not the biggest fan of Java (the code is too verbose, and it needs recompiling after every change, whereas with HTML you just need to save and refresh)
+
 (b) I wanted something that could be run on any machine
+
 (c) I wanted to keep practicing JS
 
 ---
