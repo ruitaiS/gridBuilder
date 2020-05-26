@@ -1,0 +1,11 @@
+create three state button
+
+create some kind of way to track the values at each button
+
+create some kind of way to generate the grid
+
+!!basically I need some way to access and tweak the values of an HTMl elemetn from within JS; like with each button press, I'd like to be able to alter the class of that button, and I would like to be able to pass the class of the button as a value.
+
+I'd also like to be able to generate the buttons themselves in JS; this however might just be a matter of creating some divs and copy-pasting the innerHTML's of the buttons into them?
+
+Will need to plan this out on paper

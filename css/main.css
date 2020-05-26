@@ -24,7 +24,22 @@ button{
     text-align: center;
     background-color: #e2bfab;
     /*border-radius: 10px;*/
-  
+}
+
+.floor{
+    background-color: white;
+}
+
+.bot{
+    background-color: red;
+}
+
+.wall{
+    background-color: gray;
+}
+
+.obj{
+    background-color: blue;
 }
 
 .row{
