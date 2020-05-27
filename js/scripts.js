@@ -33,6 +33,9 @@ function flip(id, type){
 };
 
 function generate(x, y){
+    //show the control panel items
+    document.getElementById("control").style.visibility = "visible";
+
     worldState = new Array(y);
     let res = "";
     for (let i = 0; i < y; i ++){
@@ -59,13 +62,11 @@ let y = Number.parseInt(document.getElementById("yIn").value);
 
 
 if ((isNaN(x))||(isNaN(y))||(x == 0)||(y == 0)){
-    say("Please enter non-zero integer values for width and height", "display");
-
+    alert("Please enter non-zero integer values for width and height", "display");
 }else{
     //do actual code
     say("Dimensions are " + x + " by " + y, "display");
     generate(x, y);
-
 };
 
 

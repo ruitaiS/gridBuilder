@@ -33,6 +33,17 @@ body{
     align-items: center;
 }
 
+#main{
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+}
+
+#control{
+    visibility: hidden;
+}
+
 .floor{
     background-color: white;
 }
