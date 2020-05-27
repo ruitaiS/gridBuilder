@@ -12,6 +12,7 @@
         <input id="xIn" autofocus autocomplete="off" type="text" placeholder="Width" title="Width">
         <input id="yIn" autocomplete="off" type="text" placeholder="Height" title="Height">
         <button type="button" onclick="getInput()" >Generate Blank Grid</button>
+        <button id="exportbtn" type="button" onclick="writeState()" >Export</button>
     </div>
 
     <div id = "main">
@@ -29,18 +30,17 @@
             <button type="gridButton" id="0,7" class ="obj" onclick="flip()"></button>
             </div>
         </div>
-        <div id="control">
-            <!--
-            <input id="xIn" autocomplete="off" type="text" placeholder="Width" title="Width">
-            <input id="yIn" autocomplete="off" type="text" placeholder="Height" title="Height">
-            -->
-            <button type="button" onclick="writeState()" >Write to File</button>
-        </div>
     </div>
 
 
     <div id="display"></div>
     <div id="display2"></div>
+
+    <!--Settings:
+    File extension type
+    Row / Column Delineators
+    -->
+    <div id="settings"></div>
 
 
 

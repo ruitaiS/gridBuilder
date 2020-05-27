@@ -2,13 +2,11 @@ let worldState;
 
 function say(msg, where){
     document.getElementById(where).innerHTML = msg;
-};
+}
 
 function flip(id, type){
     let x = id.split(",")[0];
     let y = id.split(",")[1];
-    say("Clicked (" + x + "," + y + ")", "display");
-
     switch (type){
         case "floor":
             worldState[x][y] = "wall";
@@ -26,16 +24,11 @@ function flip(id, type){
             worldState[x][y] = "floor";
             document.getElementById(id).className = "floor";
             break;
-    };
-
-
-    
-};
+    }
+}
 
 function generate(x, y){
-    //show the control panel items
-    document.getElementById("control").style.visibility = "visible";
-
+    document.getElementById("exportbtn").style.visibility = "visible";
     worldState = new Array(y);
     let res = "";
     for (let i = 0; i < y; i ++){
@@ -43,71 +36,40 @@ function generate(x, y){
         worldState[i] = new Array(x);
         for (let j = 0; j < x; j++){
             worldState[i][j] = "";
-            res += '<button type="gridButton" id="' + j + ',' + i + '" class ="floor" onclick="flip(this.id, this.className)"></button>';
+            res += '<button type="gridButton" id="'+j+','+i+'" class="floor"\
+            onclick="flip(this.id, this.className)"></button>';
         };
         res += '</div>';
-    };
-    
+    }
     document.getElementById("grid").innerHTML = res;
+}
 
+function writeState(){
+    let res = "data:application/octet-stream,"
+    for (let y = 0; y < worldState[1].length; y++){
+        for (let x = 0; x < worldState.length; x++){
+            switch (worldState[x][y]){
+                case "": res += encodeURIComponent(" ,"); break;
+                case "wall": res += encodeURIComponent("w,"); break;
+                case "obj": res += encodeURIComponent("o,"); break;
+                case "bot": res += encodeURIComponent("b,"); break;
+            }
+        }
+        res += "\n";
+    };
 
-    
+    //uriContent = "data:application/octet-stream," + encodeURIComponent("Yo!");
+    dl = window.open(res, "config");
 }
 
 function getInput (){
-
-//It's gonna round your decimals
-let x = Number.parseInt(document.getElementById("xIn").value);
-let y = Number.parseInt(document.getElementById("yIn").value);
-
-
-if ((isNaN(x))||(isNaN(y))||(x == 0)||(y == 0)){
-    alert("Please enter non-zero integer values for width and height", "display");
-}else{
-    //do actual code
-    say("Dimensions are " + x + " by " + y, "display");
-    generate(x, y);
-};
-
-
-
-
+    //It's gonna round decimals fyi
+    let x = Number.parseInt(document.getElementById("xIn").value);
+    let y = Number.parseInt(document.getElementById("yIn").value);
+    if ((isNaN(x))||(isNaN(y))||(x == 0)||(y == 0)){
+        alert("Please enter non-zero integer values for width and height", "display");
+    }else{
+        say("Dimensions are " + x + " by " + y, "display");
+        generate(x, y);
+    };
 }
-
-function makeRows(n){
-//generate text that makes n number of rows, each with unique id
-//call fillRow on each of them
-
-    res = ""
-    for (let i = 0; i < n; i ++){
-        res += "<div id='row'" + i + "class='row'>";
-        fillRow(5, i);
-        res += "</div>";
-    };
-
-    document.getElementById("grid").innerHTML = res;
-
-};
-
-function fillRow(totalCols, rowNum){
-
-    res = "";
-    for (let i = 0; i < cols; i++){
-        res += '<button onclick="fillRow(5, row1)" >yo</button>';
-
-    };
-    document.getElementById("row"+rowNum).innerHTML = res;
-
-};
-
-/*
-//doesn't work lol
-//copied & pasted from https://codyhouse.co/ds/components/info/button-states
-//Learn jQuery when you get the chance, I'm sure the code here works but it's just not formatted properly in some dumb tiny way that's making it break..
-
-$('.gameButton').on('click', function(event){
-    if($(this).hasClass("floor")){ $(this).removeClass("floor").addClass("wall"); return;}
-    else if($(this).hasClass("wall")){ $(this).removeClass("wall").addClass("obj"); return;}
-    else if($(this).hasClass("obj")){ $(this).removeClass("obj").addClass("bot"); return;}
-    else { $(this).removeClass("bot").addClass("floor"); return;}
-});*/
