@@ -4,9 +4,9 @@ function say(msg, where){
     document.getElementById(where).innerHTML = msg;
 };
 
-function flip(){
-    //get button coords somehow
-    //update the worldState array
+function flip(xyStr, type){
+    let xy = xyStr.split(",");
+    say("Clicked (" + xy[0] + "," + xy[1] + ")", "display");
 };
 
 function generate(x, y){
@@ -17,7 +17,7 @@ function generate(x, y){
         worldState[i] = new Array(x);
         for (let j = 0; j < x; j++){
             worldState[i][j] = "";
-            res += '<button type="gridButton" id="' + j + ',' + i + '" class ="floor" onclick="flip()"></button>';
+            res += '<button type="gridButton" id="' + j + ',' + i + '" class ="floor" onclick="flip(this.id, this.class)"></button>';
         };
         res += '</div>';
     };
@@ -76,6 +76,7 @@ function fillRow(totalCols, rowNum){
 
 };
 
+/*
 //doesn't work lol
 //copied & pasted from https://codyhouse.co/ds/components/info/button-states
 //Learn jQuery when you get the chance, I'm sure the code here works but it's just not formatted properly in some dumb tiny way that's making it break..
@@ -85,4 +86,4 @@ $('.gameButton').on('click', function(event){
     else if($(this).hasClass("wall")){ $(this).removeClass("wall").addClass("obj"); return;}
     else if($(this).hasClass("obj")){ $(this).removeClass("obj").addClass("bot"); return;}
     else { $(this).removeClass("bot").addClass("floor"); return;}
-});
+});*/
