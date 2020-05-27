@@ -17,7 +17,7 @@ function generate(x, y){
         worldState[i] = new Array(x);
         for (let j = 0; j < x; j++){
             worldState[i][j] = "";
-            res += '<button type="gridButton" id="' + x + ',' + y + '" class ="floor" onclick="flip()"></button>';
+            res += '<button type="gridButton" id="' + j + ',' + i + '" class ="floor" onclick="flip()"></button>';
         };
         res += '</div>';
     };
