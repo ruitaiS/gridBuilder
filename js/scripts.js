@@ -4,9 +4,32 @@ function say(msg, where){
     document.getElementById(where).innerHTML = msg;
 };
 
-function flip(xyStr, type){
-    let xy = xyStr.split(",");
-    say("Clicked (" + xy[0] + "," + xy[1] + ")", "display");
+function flip(id, type){
+    let x = id.split(",")[0];
+    let y = id.split(",")[1];
+    say("Clicked (" + x + "," + y + ")", "display");
+
+    switch (type){
+        case "floor":
+            worldState[x][y] = "wall";
+            document.getElementById(id).className = "wall";
+            break;
+        case "wall":
+            worldState[x][y] = "obj";
+            document.getElementById(id).className = "obj";
+            break;
+        case "obj":
+            worldState[x][y] = "bot";
+            document.getElementById(id).className = "bot";
+            break;
+        case "bot":
+            worldState[x][y] = "floor";
+            document.getElementById(id).className = "floor";
+            break;
+    };
+
+
+    
 };
 
 function generate(x, y){
@@ -17,7 +40,7 @@ function generate(x, y){
         worldState[i] = new Array(x);
         for (let j = 0; j < x; j++){
             worldState[i][j] = "";
-            res += '<button type="gridButton" id="' + j + ',' + i + '" class ="floor" onclick="flip(this.id, this.class)"></button>';
+            res += '<button type="gridButton" id="' + j + ',' + i + '" class ="floor" onclick="flip(this.id, this.className)"></button>';
         };
         res += '</div>';
     };
