@@ -55,6 +55,7 @@ function writeState(){
                 case "bot": res += encodeURIComponent("b,"); break;
             }
         }
+        //Why does this line work? I didn't encodeURI...
         res += "\n";
     };
 

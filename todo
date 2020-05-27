@@ -1,4 +1,4 @@
-center the grid always, and make the control panel to the right of it. Or just generally tweak the aesthetics / spacing of the control panel
+!clean up the writestate method; add more options as far as sepearators (see below)
 
 also how to output the file, specifying:
     column / row delineator characters
