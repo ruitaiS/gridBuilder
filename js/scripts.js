@@ -5,7 +5,12 @@ function say(msg, where){
 function flip(){
 };
 
-function genGrid (x, y){
+function generate (){
+let x = document.getElementById("xIn").value;
+let y = document.getElementById("yIn").value;
+
+//say("Dimensions are " + x + " by " + y, "display");
+
 
 
 }
