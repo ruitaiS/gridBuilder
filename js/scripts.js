@@ -5,11 +5,25 @@ function say(msg, where){
 function flip(){
 };
 
-function generate (){
-let x = document.getElementById("xIn").value;
-let y = document.getElementById("yIn").value;
+function generate(x, y){
+    
+}
 
-//say("Dimensions are " + x + " by " + y, "display");
+function getInput (){
+
+//It's gonna round your decimals
+let x = Number.parseInt(document.getElementById("xIn").value);
+let y = Number.parseInt(document.getElementById("yIn").value);
+
+
+if ((isNaN(x))||(isNaN(y))||(x == 0)||(y == 0)){
+    say("Please enter non-zero integer values for width and height", "display");
+
+}else{
+    //do actual code
+    say("Dimensions are " + x + " by " + y, "display");
+};
+
 
 
 
