@@ -11,10 +11,19 @@ function flip(){
 
 function generate(x, y){
     worldState = new Array(y);
-    for (let i = 0; i < x; i ++){
+    let res = "";
+    for (let i = 0; i < y; i ++){
+        res += '<div class="row">';
         worldState[i] = new Array(x);
-        worldState[i].fill("");
+        for (let j = 0; j < x; j++){
+            worldState[i][j] = "";
+            res += '<button type="gridButton" id="' + x + ',' + y + '" class ="floor" onclick="flip()"></button>';
+        };
+        res += '</div>';
     };
+    
+    document.getElementById("grid").innerHTML = res;
+
 
     
 }
