@@ -1,11 +1,21 @@
+let worldState;
+
 function say(msg, where){
     document.getElementById(where).innerHTML = msg;
 };
 
 function flip(){
+    //get button coords somehow
+    //update the worldState array
 };
 
 function generate(x, y){
+    worldState = new Array(y);
+    for (let i = 0; i < x; i ++){
+        worldState[i] = new Array(x);
+        worldState[i].fill("");
+    };
+
     
 }
 
@@ -22,6 +32,8 @@ if ((isNaN(x))||(isNaN(y))||(x == 0)||(y == 0)){
 }else{
     //do actual code
     say("Dimensions are " + x + " by " + y, "display");
+    generate(x, y);
+
 };
 
 
