@@ -1,5 +1,5 @@
 let worldState;
-let symbArr = ["_", "w", "o", "b", ","];
+let symbArr = ["-", "w", "o", "b", ","];
 
 function customize(){
     let ar = ["floors", "walls", "objects", "bots", "delimiters"];
