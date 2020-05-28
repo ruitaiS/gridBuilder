@@ -11,7 +11,11 @@ Click each grid square until the world looks right :)
 
 When you're satisfied, click export and it will generate a CSV file for you to download.
 
-#### A Note about Symbols:
-As-is, the builder uses commas for delimiters, a whitespace for floors, and "w", "o", and "b" for walls, objects, and bots respectively.
+#### Alternate Symbol Encodings:
+By default, the builder uses commas for delimiters, a whitespace to represent floors, and "w", "o", and "b" to represent walls, objects, and bots respectively.
 
-If your config reader expects different symbols than mine, you will unfortunately need to modify the writeState function in the /js/scripts.js file so that the output matches your formatting.
+If your config reader expects different symbols, you can click the "Customize Config Symbols" button, which will ask you for what character or string you want to use for the various elements.
+
+#### Bugs / Unexpected Behavior / User Beware:
+*If you enter a decimal into the grid builder, it will round to the nearest integer without alerting you.
+*The config download code has some strange behavior; I know it work as expected with the default encodings, but I have not extensively tested alternate ones. I do know that "_" and " " both seem to be encoded to " ", and there may be other weirdness. Use caution.
