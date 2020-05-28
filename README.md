@@ -17,5 +17,5 @@ By default, the builder uses commas for delimiters, a whitespace to represent fl
 If your config reader expects different symbols, you can click the "Customize Config Symbols" button, which will ask you for what character or string you want to use for the various elements.
 
 #### Bugs / Unexpected Behavior / User Beware:
-*If you enter a decimal into the grid builder, it will round to the nearest integer without alerting you.
-*The config download code has some strange behavior; I know it work as expected with the default encodings, but I have not extensively tested alternate ones. I do know that "_" and " " both seem to be encoded to " ", and there may be other weirdness. Use caution.
+* If you enter a decimal into the grid builder, it will round to the nearest integer without alerting you.
+* The config download code has some strange behavior; I know it work as expected with the default encodings, but I have not extensively tested alternate ones. I do know that "_" and " " both seem to be encoded to " ", and there may be other weirdness. Use caution.
