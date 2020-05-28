@@ -18,4 +18,4 @@ If your config reader expects different symbols, you can click the "Customize Co
 
 #### Bugs / Unexpected Behavior / User Beware:
 * If you enter a decimal into the grid builder, it will round to the nearest integer without alerting you.
-* The config download code has some strange behavior. It works as expected with the default encodings, but I have not extensively tested alternate ones. I've noticed that "_" and " " both seem to be encoded to " ", and there may be other weirdness. Use caution.
+* Config encoding works as expected with the default symbols, but I have not extensively tested alternate ones. I did notice that "_" and " " both seem to be encoded to " ", and there may be other weirdness too. Use caution.
