@@ -1,7 +1,3 @@
-!clean up the writestate method; add more options as far as sepearators
-    column / row delineator characters
-    strings signifying array elements
+Entity/Delimiter symbol, inline with export button
 
-make it generate when you press enter
-
-maybe add some cool fade in for the export button & also the grid world
+maybe add some cool fade in for the control panel & also the grid world

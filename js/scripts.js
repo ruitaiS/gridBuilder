@@ -1,9 +1,5 @@
 let worldState;
 
-function say(msg, where){
-    document.getElementById(where).innerHTML = msg;
-}
-
 function flip(id, type){
     let x = id.split(",")[0];
     let y = id.split(",")[1];
@@ -28,7 +24,7 @@ function flip(id, type){
 }
 
 function generate(x, y){
-    document.getElementById("exportbtn").style.visibility = "visible";
+    document.getElementById("exportBtn").style.visibility = "visible";
     worldState = new Array(y);
     let res = "";
     for (let i = 0; i < y; i ++){
@@ -44,19 +40,22 @@ function generate(x, y){
     document.getElementById("grid").innerHTML = res;
 }
 
+//!!!Modify this if your config reader expects different symbols!!!
 function writeState(){
     let res = "data:application/octet-stream,"
     for (let y = 0; y < worldState[1].length; y++){
         for (let x = 0; x < worldState.length; x++){
             switch (worldState[x][y]){
+                //World Entity Symbols (first case is for floor):
                 case "": res += encodeURIComponent(" "); break;
                 case "wall": res += encodeURIComponent("w"); break;
                 case "obj": res += encodeURIComponent("o"); break;
                 case "bot": res += encodeURIComponent("b"); break;
             }
+            //Delimiter Symbol:
             if (x != worldState.length -1 ){res += encodeURIComponent(",")};
         }
-        res += "\n"; //not sure why this line works without encoding, but it does lol
+        res += "\n"; //not sure why this line works without encoding to URI, but it does lol
     };
     dl = window.open(res);
 }
@@ -68,7 +67,6 @@ function getInput (){
     if ((isNaN(x))||(isNaN(y))||(x == 0)||(y == 0)){
         alert("Please enter non-zero integer values for width and height", "display");
     }else{
-        say("Dimensions are " + x + " by " + y, "display");
         generate(x, y);
     };
 }
