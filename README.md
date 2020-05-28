@@ -4,7 +4,9 @@ It generates the world config file that the AI simulator uses as input to set th
 
 Useage should be pretty self-explanatory. Set the initial dimensions of the grid world, click generate, and then click each of the grid squares to put a different type of object there.
 
-There are three types of possible world entities: wall, object, and robot (and floor, if nothing is there). Clicking each grid square will cycle between these options.
+There are four types of possible world entities, each with their own color.
+
+Walls are gray, objects are blue, bots are red, and floors are white. Click each grid square until the world is right :)
 
 When you're satisfied, click export and it will generate a CSV file for you to download.
 
