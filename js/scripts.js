@@ -49,18 +49,16 @@ function writeState(){
     for (let y = 0; y < worldState[1].length; y++){
         for (let x = 0; x < worldState.length; x++){
             switch (worldState[x][y]){
-                case "": res += encodeURIComponent(" ,"); break;
-                case "wall": res += encodeURIComponent("w,"); break;
-                case "obj": res += encodeURIComponent("o,"); break;
-                case "bot": res += encodeURIComponent("b,"); break;
+                case "": res += encodeURIComponent(" "); break;
+                case "wall": res += encodeURIComponent("w"); break;
+                case "obj": res += encodeURIComponent("o"); break;
+                case "bot": res += encodeURIComponent("b"); break;
             }
+            if (x != worldState.length -1 ){res += encodeURIComponent(",")};
         }
-        //Why does this line work? I didn't encodeURI...
-        res += "\n";
+        res += "\n"; //not sure why this line works without encoding, but it does lol
     };
-
-    //uriContent = "data:application/octet-stream," + encodeURIComponent("Yo!");
-    dl = window.open(res, "config");
+    dl = window.open(res);
 }
 
 function getInput (){

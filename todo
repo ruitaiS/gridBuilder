@@ -1,7 +1,7 @@
-!clean up the writestate method; add more options as far as sepearators (see below)
-
-also how to output the file, specifying:
+!clean up the writestate method; add more options as far as sepearators
     column / row delineator characters
     strings signifying array elements
 
--> this also needs to be updated in the java file as well
+make it generate when you press enter
+
+maybe add some cool fade in for the export button & also the grid world
