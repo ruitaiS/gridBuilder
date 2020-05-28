@@ -1,4 +1,12 @@
 let worldState;
+let symbArr = ["_", "w", "o", "b", ","];
+
+function customize(){
+    let ar = ["floors", "walls", "objects", "bots", "delimiters"];
+    for (let i = 0; i < ar.length; i ++){
+        symbArr[i] = prompt("Please enter new symbol/string for " + ar[i], symbArr[i]);
+    }
+}
 
 function flip(id, type){
     let x = id.split(",")[0];
@@ -40,20 +48,17 @@ function generate(x, y){
     document.getElementById("grid").innerHTML = res;
 }
 
-//!!!Modify this if your config reader expects different symbols!!!
 function writeState(){
     let res = "data:application/octet-stream,"
     for (let y = 0; y < worldState[1].length; y++){
         for (let x = 0; x < worldState.length; x++){
             switch (worldState[x][y]){
-                //World Entity Symbols (first case is for floor):
-                case "": res += encodeURIComponent(" "); break;
-                case "wall": res += encodeURIComponent("w"); break;
-                case "obj": res += encodeURIComponent("o"); break;
-                case "bot": res += encodeURIComponent("b"); break;
+                case "": res += encodeURIComponent(symbArr[0]); break;
+                case "wall": res += encodeURIComponent(symbArr[1]); break;
+                case "obj": res += encodeURIComponent(symbArr[2]); break;
+                case "bot": res += encodeURIComponent(symbArr[3]); break;
             }
-            //Delimiter Symbol:
-            if (x != worldState.length -1 ){res += encodeURIComponent(",")};
+            if (x != worldState.length -1 ){res += encodeURIComponent(symbArr[4])};
         }
         res += "\n"; //not sure why this line works without encoding to URI, but it does lol
     };
