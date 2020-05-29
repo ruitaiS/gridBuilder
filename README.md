@@ -15,9 +15,7 @@ When you're satisfied, click export and it will generate a CSV file for you to d
 Note that the dimensions of the grid will also be encoded as the first line of the CSV, using the selected delimiter. This is so that the simulator config reader will know what array size it needs to allocate before reading in the values - if for whatever reason you don't want this behavior, you can click the "Do Not Include Dimensions" button.
 
 #### Alternate Symbol Encodings:
-By default, the builder uses commas for delimiters, a dash to represent floors, and "w", "o", and "b" to represent walls, objects, and bots respectively.
-
-If your config reader expects different symbols, you can click the "Customize Config Symbols" button, which will ask you for what character or string you want to use for the various elements.
+By default, the builder uses commas for delimiters, a dash to represent floors, and "w", "o", and "b" to represent walls, objects, and bots respectively. If your config reader expects different symbols, you can click the "Customize Config Symbols" button, which will ask you for what character or string you want to use for the various elements.
 
 #### Known Bugs / Unexpected Behavior / User Beware:
 * If you enter a decimal into the grid builder, it will round to the nearest integer without alerting you.
