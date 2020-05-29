@@ -1,10 +1,22 @@
 let worldState;
 let symbArr = ["-", "w", "o", "b", ","];
+let writeDims = true;
+let dims = "";
 
 function customize(){
     let ar = ["floors", "walls", "objects", "bots", "delimiters"];
     for (let i = 0; i < ar.length; i ++){
         symbArr[i] = prompt("Please enter new symbol/string for " + ar[i], symbArr[i]);
+    }
+}
+
+function toggleDims(){
+    if (writeDims){
+        writeDims = false;
+        document.getElementById("dimTgl").innerHTML = "Include Dimensions"; 
+    }else{
+        writeDims = true;
+        document.getElementById("dimTgl").innerHTML = "Do Not Include Dimensions"; 
     }
 }
 
@@ -33,6 +45,7 @@ function flip(id, type){
 
 function generate(x, y){
     document.getElementById("exportBtn").style.visibility = "visible";
+    dims = x+symbArr[4]+y;
     worldState = new Array(y);
     let res = "";
     for (let i = 0; i < y; i ++){
@@ -50,6 +63,7 @@ function generate(x, y){
 
 function writeState(){
     let res = "data:application/octet-stream,"
+    if (writeDims){res += encodeURIComponent(dims) + "\n"};
     for (let y = 0; y < worldState[1].length; y++){
         for (let x = 0; x < worldState.length; x++){
             switch (worldState[x][y]){

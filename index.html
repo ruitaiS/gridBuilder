@@ -7,12 +7,12 @@
 </head>
 
 <body>
-    <div id="input">
+    <span id="input">
         <input id="xIn" autofocus autocomplete="off" type="text" placeholder="Width" title="Width">
         <input id="yIn" autocomplete="off" type="text" placeholder="Height" title="Height">
         <button id="generateBtn" type="button" onclick="getInput()" >Generate Blank Grid</button>
         <button id="exportBtn" type="button" onclick="writeState()" >Export</button>
-    </div>
+    </span>
 
 
 
@@ -34,7 +34,11 @@
         </div>
     </div>
 
+    <span>
     <button id="customizeBtn" type="button" onclick="customize()" >Customize Config Symbols</button>
+    <button id="dimTgl" type="button" onclick="toggleDims()" >Do Not Include Dimensions</button>
+    </span>
+    
 
     <div id="display"></div>
     <div id="display2"></div>
