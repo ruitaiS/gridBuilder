@@ -46,14 +46,14 @@ function flip(id, type){
 function generate(x, y){
     document.getElementById("exportBtn").style.visibility = "visible";
     dims = x+symbArr[4]+y;
-    worldState = new Array(y);
+    worldState = new Array(x);
     let res = "";
-    for (let i = 0; i < y; i ++){
-        res += '<div class="row">';
-        worldState[i] = new Array(x);
-        for (let j = 0; j < x; j++){
+    for (let i = 0; i < x; i ++){
+        res += '<div class="col">';
+        worldState[i] = new Array(y);
+        for (let j = 0; j < y; j++){
             worldState[i][j] = "";
-            res += '<button type="gridButton" id="'+j+','+i+'" class="floor"\
+            res += '<button type="gridButton" id="'+i+','+j+'" class="floor"\
             onclick="flip(this.id, this.className)"></button>';
         };
         res += '</div>';
