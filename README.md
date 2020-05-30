@@ -20,5 +20,4 @@ By default, the builder uses commas for delimiters, a dash to represent floors, 
 #### Known Bugs / Unexpected Behavior / User Beware:
 * If you enter a decimal into the grid builder, it will round to the nearest integer without alerting you.
 * Config encoding works as expected with the default symbols, but I have not extensively tested alternate ones. I did notice that "_" and " " both seem to be encoded to " ", and there may be other weirdness too. Use caution.
-* If you click cancel on the prompts for the custom encodings, it will register a null character, and things will break. This is on my to-do list to fix, but for now just don't click cancel :)
 * It doesn't seem to want to export single row/column grids for whatever reason
