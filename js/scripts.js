@@ -6,7 +6,13 @@ let dims = "";
 function customize(){
     let ar = ["floors", "walls", "objects", "bots", "delimiters"];
     for (let i = 0; i < ar.length; i ++){
-        symbArr[i] = prompt("Please enter new symbol/string for " + ar[i], symbArr[i]);
+        let val = prompt("Please enter new symbol/string for " + ar[i], symbArr[i]);
+        if (val === null){
+            symbArr = ["-", "w", "o", "b", ","];
+            return;
+        }else{
+            symbArr[i] = val;
+        };
     }
 }
 
