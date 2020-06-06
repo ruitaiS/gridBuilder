@@ -21,6 +21,10 @@ body{
     vertical-align: middle;
 }
 
+[type="gridButton"]:active{
+    border-style: outset;
+}
+
 #input{
     height: 100px;
     display: flex;

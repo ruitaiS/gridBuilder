@@ -1,7 +1,14 @@
-let worldState;
+let worldState = new Array(1);
+worldState[0] = new Array ();
+
 let symbArr = ["-", "w", "o", "b", ","];
 let writeDims = true;
 let dims = "";
+let mouseDown = false;
+
+function mouseUpdate(bool){
+    mouseDown = bool;
+}
 
 function customize(){
     let ar = ["floors", "walls", "objects", "bots", "delimiters"];
@@ -23,6 +30,12 @@ function toggleDims(){
     }else{
         writeDims = true;
         document.getElementById("dimTgl").innerHTML = "Do Not Include Dimensions"; 
+    }
+}
+
+function drag(id, type){
+    if (mouseDown){
+        flip(id, type);
     }
 }
 
@@ -60,7 +73,7 @@ function generate(x, y){
         for (let j = 0; j < y; j++){
             worldState[i][j] = "";
             res += '<button type="gridButton" id="'+i+','+j+'" class="floor"\
-            onclick="flip(this.id, this.className)"></button>';
+            onmousedown="flip(this.id, this.className)" onmouseover="drag(this.id, this.className)"></button>';
         };
         res += '</div>';
     }
