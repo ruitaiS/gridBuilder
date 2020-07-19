@@ -65,6 +65,10 @@ body{
     background-color: blue;
 }
 
+.food{
+    background-color: green;
+}
+
 .row{
     display: flex;
     flex-direction: row;

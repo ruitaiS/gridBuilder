@@ -1,7 +1,7 @@
 let worldState = new Array(1);
 worldState[0] = new Array ();
 
-let symbArr = ["-", "w", "o", "b", ","];
+let symbArr = ["-", "w", "o", "b", "f", ","];
 let writeDims = true;
 let dims = "";
 let mouseDown = false;
@@ -11,11 +11,11 @@ function mouseUpdate(bool){
 }
 
 function customize(){
-    let ar = ["floors", "walls", "objects", "bots", "delimiters"];
+    let ar = ["floors", "walls", "objects", "bots", "food", "delimiters"];
     for (let i = 0; i < ar.length; i ++){
         let val = prompt("Please enter new symbol/string for " + ar[i], symbArr[i]);
         if (val === null){
-            symbArr = ["-", "w", "o", "b", ","];
+            symbArr = ["-", "w", "o", "b", "f", ","];
             return;
         }else{
             symbArr[i] = val;
@@ -56,15 +56,19 @@ function flip(id, type){
             document.getElementById(id).className = "bot";
             break;
         case "bot":
+            worldState[x][y] = "food";
+            document.getElementById(id).className = "food";
+            break;
+        case "food":
             worldState[x][y] = "floor";
             document.getElementById(id).className = "floor";
-            break;
+            break;        
     }
 }
 
 function generate(x, y){
     document.getElementById("exportBtn").style.visibility = "visible";
-    dims = x+symbArr[4]+y;
+    dims = x+symbArr[symbArr.length-1]+y;
     worldState = new Array(x);
     let res = "";
     for (let i = 0; i < x; i ++){
@@ -90,8 +94,9 @@ function writeState(){
                 case "wall": res += encodeURIComponent(symbArr[1]); break;
                 case "obj": res += encodeURIComponent(symbArr[2]); break;
                 case "bot": res += encodeURIComponent(symbArr[3]); break;
+                case "food": res += encodeURIComponent(symbArr[4]); break;
             }
-            if (x != worldState.length -1 ){res += encodeURIComponent(symbArr[4])};
+            if (x != worldState.length -1 ){res += encodeURIComponent(symbArr[symbArr.length-1])};
         }
         res += "\n"; //not sure why this line works without encoding to URI, but it does lol
     };
