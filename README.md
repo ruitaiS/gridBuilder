@@ -9,6 +9,8 @@ Walls are gray, objects are blue,
 bots are red, and floors are white.
 Click each grid square until the world looks right :)
 
+(Also food is green lol)
+
 When you're satisfied, click export and it will generate a CSV file for you to download.
 
 #### Encoding Grid Dimensions (Or Not):
